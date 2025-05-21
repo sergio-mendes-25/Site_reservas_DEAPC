@@ -31,6 +31,7 @@ CL-7	    Avaliar o sistema	        Como cliente quero poder avaliar o quão efic
                                         na minha procura, marcação e caso seja necessário no cancelamento da mesma reserva	                Baixa
 
 
+
                                                                     Ator Gestor	
 
 Código:	                Nome:	                                        Descrição:	                                                      Prioridade:
