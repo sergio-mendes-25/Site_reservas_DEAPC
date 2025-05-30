@@ -1,0 +1,4 @@
+body { background-color: gray; }
+h1 { font-size:36pt; }
+h2 { color:blue; }
+p { color:red; text-align:center; }

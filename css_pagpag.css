@@ -1,0 +1,10 @@
+body { background-color: LightGray; text-align:center; }
+h1 { font-size:36pt; text-align:center; }
+h1 { color:#003366; }
+p { color:darkblue; text-align:center; }
+input[type=text] {
+  width: 20%;
+  margin: 8px 0;
+  background-color: #f1f1f1;
+}
+
