@@ -13,7 +13,6 @@ header
       padding: 10px;
       text-align: center;
 }
-
 h2
 {
      
@@ -37,12 +36,10 @@ form label
   font-weight: bold;
 }
 
-
-
 form input[type="text"],
 form input[type="email"],
-form input[type="password"]{
-
+form input[type="password"] 
+{
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
@@ -69,7 +66,7 @@ main
 }
 .botao 
 {
-      background-color: #003366;
+      background-color:  #003366;
       color: white;
       padding: 10px;
       border: none;
@@ -87,6 +84,16 @@ footer
       text-align: center;
       padding: 10px;
 }
+
+
+
+
+
+
+
+
+
+
 
 @media screen and (max-width: 768px) 
 {
