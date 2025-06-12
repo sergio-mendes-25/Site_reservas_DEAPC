@@ -13,15 +13,12 @@ header
       padding: 10px;
       text-align: center;
 }
-
-h2
-{
+h2{
      
       text-align: center;
       
 }
-form 
-{
+form {
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
@@ -30,19 +27,15 @@ form
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-form label 
-{
+form label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-
-
 form input[type="text"],
 form input[type="email"],
-form input[type="password"]{
-
+form input[type="password"] {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
