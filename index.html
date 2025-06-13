@@ -14,13 +14,33 @@
       <a href="login.html">Login</a>
     </nav>
   </header>
+
   <main>
-    <a><p>Bem-vindo ao sistema de reservas do Hotel California.</p>
-    <img srcset="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
+    <p>Bem-vindo ao sistema de reservas do Hotel California.</p>
+    <p>Por favor, faça login para continuar.</p>
+
+    <div class="login-box">
+      <form action="login.php" method="post">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <div class="botoes">
+          <!-- Botão que submete o formulário -->
+          <button type="submit">Login</button>
+
+          <!-- Link que leva ao formulário de registo -->
+          <a href="registo.html">Registo</a>
+
+          <p></p>
+        </div>
+      </form>
+    </div>
+
+    <img src="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
   </main>
+
   <footer>
-    <a><p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
-    <a></a><p>Telefone: +1 760-320-6810</p>
+    <p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
+    <p>Telefone: +1 760-320-6810</p>
     <p>&copy; 2025 - Hotel California</p>
   </footer>
 </body>
