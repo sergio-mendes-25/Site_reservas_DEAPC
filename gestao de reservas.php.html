@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Reservas</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .pago { color: green; }
+        .nao-pago { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Gestão de Reservas</h1>
+    <table id="tabela-reservas">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Utilizador</th>
+                <th>Reserva ID</th>
+                <th>Data de Reserva</th>
+                <th>Tipo</th>
+                <th>Subtipo</th>
+                <th>Data de Início</th>
+                <th>Data de Fim</th>
+                <th>Pagamento</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        fetch('action.php')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('#tabela-reservas tbody');
+                data.forEach(reserva => {
+                    const linha = document.createElement('tr');
+                    linha.innerHTML = `
+                        <td>${reserva.ID}</td>
+                        <td>${reserva.username}</td>
+                        <td>${reserva.reserva_id}</td>
+                        <td>${reserva.data_reserva}</td>
+                        <td>${reserva.tipo}</td>
+                        <td>${reserva.subtipo}</td>
+                        <td>${reserva.data_inicio}</td>
+                        <td>${reserva.data_fim}</td>
+                        <td class="${reserva.pagamento == 1 ? 'pago' : 'nao-pago'}">
+                            ${reserva.pagamento == 1 ? 'Pago' : 'Não Pago'}
+                        </td>
+                    `;
+                    tbody.appendChild(linha);
+                });
+            });
+    </script>
+</body>
+</html>
