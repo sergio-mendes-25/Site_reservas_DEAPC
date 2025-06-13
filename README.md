@@ -1,6 +1,5 @@
 # Site_reservas_DEAPC
 site de reservas DEAPC - Hotel -
-<<<<<<< HEAD
 teste_sergio-mendes-25
 Alterado JF
 
@@ -43,5 +42,3 @@ GT-4	    Gerir contas dos clientes	Como gestor quero poder aceder às contas dos
 GT-5	    Criar/Editar reservas	    Como gestor quero conseguir criar e editar as reservas	                                              Média
 GT-6	    Alterar disponibilidades	Como gestor quero conseguir alterar disponibilidades de cada um dos serviços disponibilizados	      Média
 GT-7	    Novos serviços	            Como gestor quero conseguir adicionar novos serviços	Baixa
-=======
->>>>>>> b40ec0c (Initial commit)
