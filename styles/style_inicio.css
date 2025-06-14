@@ -1,12 +1,14 @@
-body 
+body /*estilo geral da página*/
 {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f2f2f2;
-      text-align: center;
+      text-align: left;
 }
-header
+
+
+header /*estilo do cabeçalho*/ 
 {
       background-color: #003366;
       color: white;
@@ -15,33 +17,89 @@ header
 }
 
 
-nav a 
+h2 /*estilo do título*/
+{
+     
+      text-align: center;
+      
+}
+
+
+form /*estilo do formulário de registo*/
+{
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+form label /*estilo dos rótulos do formulário*/
+{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+form input[type="text"],       /*estilo dos campos de texto do formulário*/
+form input[type="email"],      /*estilo dos campos de texto do formulário*/
+form input[type="password"]    /*estilo dos campos de texto do formulário*/
+{
+  
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+}
+
+
+nav a /*estilo dos links de navegação*/
 {
       color: white;
       margin: 0 10px;
       text-decoration: none;
 }
-nav a:hover 
+
+
+nav a:hover /*estilo do link quando o mouse passa por cima*/
 {
       text-decoration: underline;
 }
-main 
+
+
+main /*estilo do conteúdo principal*/
 {
       padding: 20px;
       max-width: 100%;
+      text-align: center;
 }
-.botao 
+
+
+.botao /*estilo dos botões*/
 {
-      position: center;
-      background-color: #003366;
-      color: white;
-      text-decoration-color: white;
-      padding: 10px;
-      border: black 
-      box-sizing: border-box;
-      cursor:pointer;
+      display: inline-block;
+      size-adjust: none;
+       width: 120px;              /* largura fixa (ou usa 100% dentro de um flexbox) */
+       padding: 10px;
+       text-align: center;
+       background-color: #002e5d;
+       color: white;
+       border: none;
+       border-radius: 5px;
+       text-decoration: none;     /* remove sublinhado nos <a> */
+       font-weight: bold;
+       cursor: pointer;
+       margin: 5px;
 }
-footer 
+
+
+footer /*estilo do rodapé*/
 {
   
       position: fixed;
@@ -54,9 +112,14 @@ footer
       padding: 10px;
 }
 
-@media screen and (max-width: 768px) 
+img /*estilo das imagens*/
 {
-  nav a 
+     align-items: center;
+}
+
+@media screen and (max-width: 768px) /*estilo responsivo para telas pequenas*/
+{
+  nav a /*estilo dos links de navegação em telas pequenas*/
   {
     display: block;
     margin: 10px 0;

@@ -1,43 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel California - Início</title>
-  <link rel="stylesheet" href="styles/style_inicio.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Hotel California - Início</title>
+      <link rel="stylesheet" href="styles/style_inicio.css">
 </head>
+
+<!-- Corpo da página -->
 <body>
-  <header>
-    <h1>Hotel California</h1>
-    <nav cass="menu-vertical">
-      <a href="registo.html">Registo</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
-
-  <main>
-    <p>Bem-vindo ao sistema de reservas do Hotel California.</p>
-    <p>Por favor, faça login para continuar.</p>
-
-    <div class="login-box">
-      <form action="login.php" method="post">
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <div class="botoes">
-          <!-- Botão que submete o formulário -->
-          <button type="submit">Login</button>
-
-          <!-- Link que leva ao formulário de registo -->
-          <a href="registo.html">Registo</a>
-
-          <p></p>
-        </div>
-      </form>
-    </div>
-
-    <img src="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
-  </main>
-
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Hotel California</h1>
+    </header>
+            <!-- Conteúdo principal -->
+            <main>
+                <!--Mensagem de boas-vindas-->
+                <p>Bem-vindo ao sistema de reservas do Hotel California.</p>
+                <p>Por favor, faça login para continuar.</p>
+                <!-- Formulário de login -->
+                <div class="login-box">
+                    <form action="login.php" method="post">
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email" required><br><br>
+                        <label for="pass">Password:</label><br>
+                        <input type="password" id="pass" name="pass" required><br><br>       
+                        <!-- Botão de submissão -->
+                        <button class="botao" type="submit">Login</button> <a>
+                        <a class="botao" href="registo.html">Registo</a>  <!-- Link para registo -->                       
+                      </form>                  
+                </div>
+              
+                <!-- Imagem (descomentada se quiseres mostrar) -->
+                <img src="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
+              
+            </main>
+            
   <footer>
     <p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
     <p>Telefone: +1 760-320-6810</p>
