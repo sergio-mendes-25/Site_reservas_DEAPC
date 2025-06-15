@@ -116,7 +116,7 @@ footer /*estilo do rodapé*/
 img /*estilo das imagens*/
 {
      align-items: center;
-     border: 3px solid black;   /* contorno azul */
+     border: 3px solid bl;   /* contorno azul */
      border-radius: 8px;          /* cantos arredondados */
      
 }

@@ -1,4 +1,5 @@
 <?php
+
 // registo.php
 
 ini_set('display_errors', 1);
@@ -6,7 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Criar ligação à base de dados
-$db = new SQLite3('/home/sergio/public_html/Site_reservas_DEAPC/database/hotel.db', );
+$db = new SQLite3('/home/sergio/public_html/Site_reservas_DEAPC/database/hotel.db', SQLITE3_OPEN_READWRITE);
 
 
 //Recebe os dados do formulário
