@@ -29,7 +29,13 @@ $stmt->bindValue(':Password', password_hash($Password, PASSWORD_DEFAULT), SQLITE
 $result = $stmt->execute();
 
 if ($result) {
-    echo "<h2>Registo efetuado com sucesso!</h2>";
+    // Criar sessão automaticamente após registo
+    $_SESSION['email'] = $email;
+    $_SESSION['nome'] = $nome;
+
+    // Redirecionar para página de cliente
+    header('Location: home/sergio/public_html/Site_reservas_DEAPC/escolha_reservas2.html');
+    exit;
 } else {
     echo "<h2>Erro ao registar: " . $db->lastErrorMsg() . "</h2>";
 }

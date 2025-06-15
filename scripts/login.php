@@ -24,7 +24,7 @@ if ($user && password_verify($password, $user['Password'])) {
     $_SESSION['nome'] = $user['Nome'];
 
     // Redirecionar para a área reservada do cliente
-    header('Location: ../pagina_cliente.php');
+    header('Location: home/sergio/public_html/Site_reservas_DEAPC/escolha_reservas2.html');
     exit;
 } else {
     // Caso falhe, mostrar erro
