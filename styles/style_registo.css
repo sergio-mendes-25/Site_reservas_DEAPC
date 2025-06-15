@@ -24,6 +24,11 @@ h2 /*estilo do título*/
       
 }
 
+.centralizado /*estilo para centralizar o conteúdo*/
+{
+      text-align: center;
+      
+}
 
 form /*estilo do formulário de registo*/
 {
@@ -48,6 +53,7 @@ form input[type="text"],       /*estilo dos campos de texto do formulário*/
 form input[type="email"],      /*estilo dos campos de texto do formulário*/
 form input[type="password"]    /*estilo dos campos de texto do formulário*/
 {
+ 
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
@@ -73,6 +79,7 @@ nav a:hover /*estilo do link quando o mouse passa por cima*/
 
 main /*estilo do conteúdo principal*/
 {
+      
       padding: 20px;
       max-width: 100%;
 }
@@ -99,7 +106,7 @@ main /*estilo do conteúdo principal*/
 footer /*estilo do rodapé*/
 {
   
-      position: fixed;
+      /*position: auto;*/
       bottom: 0;
       left: 0;
       width: 100%;

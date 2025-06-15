@@ -10,6 +10,7 @@ body /*estilo geral da página*/
 
 header /*estilo do cabeçalho*/ 
 {
+      
       background-color: #003366;
       color: white;
       padding: 10px;
@@ -52,8 +53,8 @@ form input[type="password"]    /*estilo dos campos de texto do formulário*/
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #003366;
+  border-radius: 4px solid #003366;
   box-sizing: border-box;
   
 }
@@ -102,7 +103,7 @@ main /*estilo do conteúdo principal*/
 footer /*estilo do rodapé*/
 {
   
-      position: fixed;
+      /*position: fixed;*/
       bottom: 0;
       left: 0;
       width: 100%;
@@ -115,6 +116,9 @@ footer /*estilo do rodapé*/
 img /*estilo das imagens*/
 {
      align-items: center;
+     border: 3px solid black;   /* contorno azul */
+     border-radius: 8px;          /* cantos arredondados */
+     
 }
 
 @media screen and (max-width: 768px) /*estilo responsivo para telas pequenas*/
