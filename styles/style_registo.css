@@ -125,3 +125,16 @@ footer /*estilo do rodapé*/
     margin: 10px 0;
   }
 }
+
+.erro /*estilo para mensagens de erro*/
+{
+  color: red;
+  font-size: 0.9em;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+input.erro-input /*estilo para campos de entrada com erro*/
+{
+  border-color: red;
+}

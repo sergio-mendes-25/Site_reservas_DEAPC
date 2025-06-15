@@ -12,30 +12,51 @@
 <body>
     <!-- Cabeçalho da página -->
     <header>
-        <h1>Hotel California</h1>
+        <h1>Hotel California</h1>     
     </header>
             <!-- Conteúdo principal -->
             <main>
                 <!--Mensagem de boas-vindas-->
                 <p>Bem-vindo ao sistema de reservas do Hotel California.</p>
-                <!-- Imagem (descomentada se quiseres mostrar) -->
                 <!-- Mensagem de login -->
-                <p>Por favor, faça login para continuar.</p>
+                <p>Por favor, faça login ou registe-se para continuar.</p>
+                    <div class="botoes">
+                         <!-- Botão que abre o modal de login -->
+                         <button class="botao" type="button" onclick="abrirModal()">Login</button>            
+                         <!-- Link para a página de registo -->
+                         <a class="botao" href="registo.html">Registo</a>
+                     </div>
+                     <br>
                 <img src="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
-                <!-- Formulário de login -->
-                <div class="login-box">
-                    <form action="login.php" method="post">
-                        <label for="email">Email:</label><br>
-                        <input type="email" id="email" name="email" required><br><br>
-                        <label for="pass">Password:</label><br>
-                        <input type="password" id="pass" name="pass" required><br><br>       
-                        <!-- Botão de submissão -->
-                        <button class="botao" type="submit">Login</button> <a>
-                        <a class="botao" href="registo.html">Registo</a>  <!-- Link para registo -->                       
-                      </form>                  
-                </div>
-              
-                              
+               
+                           <!-- Modal (janela pop-up de login) -->
+                           <div id="overlay" class="modal-overlay">
+                                 <div class="modal-box">
+                                       <h2>Login</h2>
+
+                                           <!-- Formulário de login -->
+                                           <form action="scripts/login.php" method="post">
+
+                                                <!-- Campo de email -->
+                                                <label for="email">Email:</label>
+                                                <input type="email" name="email" id="email" required>
+
+                                                <!-- Campo de password -->
+                                                <label for="pass">Password:</label>
+                                                <input type="password" name="pass" id="pass" required>
+
+                                                <!-- Botão para submeter o formulário -->
+                                                <button class="botao" type="submit">Entrar</button>
+
+                                                <!-- Botão para fechar o modal -->
+                                                <button class="botao fechar" type="button" onclick="fecharModal()">Fechar</button>
+                                           </form>
+                                 </div>
+                           </div>
+
+                  <!-- JavaScript para abrir/fechar modal -->
+                  <script src="scripts/login_index.js" defer></script>
+
             </main>
             
   <footer> <!-- Rodapé da página -->

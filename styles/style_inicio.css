@@ -103,7 +103,7 @@ main /*estilo do conteúdo principal*/
 footer /*estilo do rodapé*/
 {
   
-      /*position: fixed;*/
+      position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
@@ -128,4 +128,57 @@ img /*estilo das imagens*/
     display: block;
     margin: 10px 0;
   }
+}
+
+/* Fundo escurecido por trás da janela modal */
+.modal-overlay {
+  display: none;          /* Escondido por padrão */
+  position: fixed;                   /* Fica fixo na tela */
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;       /* Cobre o ecrã todo */
+  background: rgba(0, 0, 0, 0.6);    /* Fundo escuro translúcido */
+  justify-content: center;          /* Centraliza horizontalmente */
+  align-items: center;              /* Centraliza verticalmente */
+  z-index: 1000;                    /* Fica por cima de tudo */
+}
+
+/* Caixa do modal (formulário) */
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;                        /* Responsivo */
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* Título do modal */
+.modal-box h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #002e5d;
+  text-align: center;
+}
+
+/* Campos de input do formulário */
+.modal-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #003366;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Botões dentro do modal */
+.modal-box .botao {
+  width: 100%;                      /* Ocupa toda a largura do modal */
+  margin-top: 10px;
+}
+
+/* Botão de fechar */
+.modal-box .fechar {
+  background-color: #b71c1c;        /* Vermelho */
 }
