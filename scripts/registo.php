@@ -7,7 +7,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Criar ligação à base de dados
-$db = new SQLite3('/home/sergio/public_html/Site_reservas_DEAPC/database/hotel.db', SQLITE3_OPEN_READWRITE);
+$db = new SQLite3('/home/sergio/public_html/Site_reservas_DEAPC/database/hotel.db', );
 
 
 //Recebe os dados do formulário
@@ -34,7 +34,7 @@ if ($result) {
     $_SESSION['nome'] = $nome;
 
     // Redirecionar para página de cliente
-    header('Location: home/sergio/public_html/Site_reservas_DEAPC/escolha_reservas2.html');
+    header('Location: /~sergio/Site_reservas_DEAPC/escolha_reservas2.html');
     exit;
 } else {
     echo "<h2>Erro ao registar: " . $db->lastErrorMsg() . "</h2>";
