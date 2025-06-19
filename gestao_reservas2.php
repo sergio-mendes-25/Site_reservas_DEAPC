@@ -3,6 +3,12 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 session_start();
 
+if (isset($_POST['cancelar'])) {
+  unset($_SESSION['reservas']);
+  header("Location: gestao_reservas2.php"); // recarrega a página limpa
+  exit;
+}
+
 // Simulação de utilizador registado
 $utilizador = $_SESSION['utilizador'] ?? 'Joao Silva';
 $id_utilizador = $_SESSION['id_utilizador'] ?? 1;
@@ -12,35 +18,43 @@ $dataReserva = date('Y-m-d');
 $checkin = $_POST['checkin'] ?? '-';
 $checkout = $_POST['checkout'] ?? '-';
 
-$tipos = ['carro', 'aventura', 'relaxamento', 'gastronomia'];
-$reservas = [];
+// Se acabaste de submeter uma reserva (vinda de escolha_reservas2.html)
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['cancelar'])) {
+  $tipos = ['carro', 'aventura', 'relaxamento', 'gastronomia'];
+  $reservas = [];
 
-foreach ($tipos as $tipo) {
-  if (!empty($_POST[$tipo])) {
+  foreach ($tipos as $tipo) {
+    if (!empty($_POST[$tipo])) {
+      $reservas[] = [
+        'tipo' => strtoupper($tipo),
+        'subtipo' => $_POST[$tipo],
+        'checkin' => $_POST['checkin'] ?? '-',
+        'checkout' => $_POST['checkout'] ?? '-',
+        'reserva_id' => rand(1000, 9999),
+        'data_reserva' => date('Y-m-d'),
+        'pagamento' => 'Não'
+      ];
+    }
+  }
+
+  if (empty($reservas)) {
     $reservas[] = [
-      'tipo' => strtoupper($tipo),
-      'subtipo' => $_POST[$tipo],
+      'tipo' => 'HOTEL',
+      'subtipo' => 'Check-in/out',
       'checkin' => $_POST['checkin'] ?? '-',
       'checkout' => $_POST['checkout'] ?? '-',
       'reserva_id' => rand(1000, 9999),
       'data_reserva' => date('Y-m-d'),
-      'pagamento' => 'Não'
+      'pagamento' => 'Nao'
     ];
   }
+
+  // Guarda na sessão
+  $_SESSION['reservas'] = $reservas;
 }
 
-// Se nenhuma das opções foi escolhida, cria pelo menos 1 entrada com HOTEL
-if (empty($reservas)) {
-  $reservas[] = [
-    'tipo' => 'HOTEL',
-    'subtipo' => 'Check-in/out',
-    'checkin' => $_POST['checkin'] ?? '-',
-    'checkout' => $_POST['checkout'] ?? '-',
-    'reserva_id' => rand(1000, 9999),
-    'data_reserva' => date('Y-m-d'),
-    'pagamento' => 'Nao'
-  ];
-}
+// Agora carrega as reservas da sessão, mesmo após atualizar a página
+$reservas = $_SESSION['reservas'] ?? [];
 
 ?>
 
@@ -108,9 +122,12 @@ if (empty($reservas)) {
         </tbody>
     </table>
     <div style="text-align: center; margin-top: 2rem;">
-      <button onclick="window.location.href='escolha_reservas2.html'" style="padding: 0.75rem 1.5rem; font-size: 1rem; background: #007BFF; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        <button onclick="window.location.href='escolha_reservas2.html'" style="padding: 0.75rem 1.5rem; font-size: 1rem; background: #007BFF; color: white; border: none; border-radius: 6px; cursor: pointer;">
         CONTINUAR A ESCOLHER
-      </button>
+      <form method="post">
+        <button type="submit" name="cancelar" style="padding: 0.75rem 1.5rem; font-size: 1rem; background: #dc3545; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        CANCELAR RESERVA
+    </button>
     </div>
 </body>
 </html>
