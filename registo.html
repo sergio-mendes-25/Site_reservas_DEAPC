@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registo/Login</title>
-  <link rel="stylesheet" href="styles/style_registo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo/Login</title>
+    <link rel="stylesheet" href="styles/style_registo.css">
 </head>
-<header>
-  <h1>Hotel California</h1>
-</header>  
 <body>
-  <h2>Registo de Cliente</h2>
-  <form>
-    <label>Nome: <a><p><input type="text" name="nome"></label><br>
-    <label>Morada:<p></p> <input type="text" name="morada"></label><br>
-    <label>&empty; Data de Nascimento: <input type="date" name="data_nascimento"></label><br>
-    <p></p>
-    <label>Telefone: <p></p><input type="tel" name="telefone"></label><br>
-    <label>Número de Cartão de Cidadão: <p></p><input type="text" name="cartao_cidadao"></label><br>
-    <label>Email: <p></p><input type="email" name="email"></label><br>
-    <label>Password: <p></p><input type="password" name="pass"></label><br>
-    <p>   
-    <p>
-    <button class="botao" type="submit">Registar</button>
-  </form>
+
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Hotel California</h1>
+    </header>
+
+    <!-- Conteúdo principal da página -->
+    <main>
+        <h2>Registo de Cliente</h2>
+        <p class="centralizado">Por favor, preencha o formulário abaixo para se registar.</p>
+        
+        <!-- Caixa de registo -->
+        <div class="registo-box">
+            <form action="scripts/registo.php" method="post">
+                <label for="Nome">Nome:</label><br>
+                <input type="text" id="Nome" name="Nome" required><br><br>
+                <div class="erro" id="erroNome"></div>
+
+                <label for="Telefone">Telefone:</label><br>
+                <input type="text" id="Telefone" name="Telefone" required><br><br>
+                <div class="erro" id="erroTelefone"></div>
+
+                <label for="Data_nascimento">Data de Nascimento:</label><br>
+                <input type="date" id="Data_nascimento" name="Data_nascimento" required><br><br>
+                <div class="erro" id="erroData_nascimento"></div>
+
+                <label for="Email">Email:</label><br>
+                <input type="email" id="Email" name="Email" required><br><br>
+                <div class="erro" id="erroEmail"></div>
+
+                <label for="Password">Password:</label><br>
+                <input type="password" id="Password" name="Password" required><br><br>
+                <div class="erro" id="erroPassword"></div>
+
+                <button class="botao" type="submit">Registar</button>
+               
+
+            </form>
+        </div>
+    </main>
+    <script src="scripts/js_registo.js"></script>
+    <!-- Rodapé da página -->
+    <footer>
+        <p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
+        <p>Telefone: +1 760-320-6810</p>
+        <p>&copy; 2025 - Hotel California</p>
+    </footer>
 </body>
-<footer>
-    <a><p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
-    <a></a><p>Telefone: +1 760-320-6810</p>
-    <p>&copy; 2025 - Hotel California</p>
-  </footer>
 </html>

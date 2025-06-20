@@ -1,13 +1,16 @@
-body 
+body /*estilo geral da página*/
 {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f2f2f2;
-      text-align: center;
+      text-align: left;
 }
-header
+
+
+header /*estilo do cabeçalho*/ 
 {
+      
       background-color: #003366;
       color: white;
       padding: 10px;
@@ -15,30 +18,89 @@ header
 }
 
 
-nav a 
+h2 /*estilo do título*/
+{
+     
+      text-align: center;
+      
+}
+
+
+form /*estilo do formulário de registo*/
+{
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+form label /*estilo dos rótulos do formulário*/
+{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+form input[type="text"],       /*estilo dos campos de texto do formulário*/
+form input[type="email"],      /*estilo dos campos de texto do formulário*/
+form input[type="password"]    /*estilo dos campos de texto do formulário*/
+{
+  
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #003366;
+  border-radius: 4px solid #003366;
+  box-sizing: border-box;
+  
+}
+
+
+nav a /*estilo dos links de navegação*/
 {
       color: white;
       margin: 0 10px;
       text-decoration: none;
 }
-nav a:hover 
+
+
+nav a:hover /*estilo do link quando o mouse passa por cima*/
 {
       text-decoration: underline;
 }
-main 
+
+
+main /*estilo do conteúdo principal*/
 {
       padding: 20px;
       max-width: 100%;
+      text-align: center;
 }
-.botao 
+
+
+.botao /*estilo dos botões*/
 {
-      background-color: darkorange;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
+      display: inline-block;
+      size-adjust: none;
+       width: 120px;              /* largura fixa (ou usa 100% dentro de um flexbox) */
+       padding: 10px;
+       text-align: center;
+       background-color: #002e5d;
+       color: white;
+       border: none;
+       border-radius: 5px;
+       text-decoration: none;     /* remove sublinhado nos <a> */
+       font-weight: bold;
+       cursor: pointer;
+       margin: 5px;
 }
-footer 
+
+
+footer /*estilo do rodapé*/
 {
   
       position: fixed;
@@ -51,11 +113,72 @@ footer
       padding: 10px;
 }
 
-@media screen and (max-width: 768px) 
+img /*estilo das imagens*/
 {
-  nav a 
+     align-items: center;
+     border: 3px solid bl;   /* contorno azul */
+     border-radius: 8px;          /* cantos arredondados */
+     
+}
+
+@media screen and (max-width: 768px) /*estilo responsivo para telas pequenas*/
+{
+  nav a /*estilo dos links de navegação em telas pequenas*/
   {
     display: block;
     margin: 10px 0;
   }
+}
+
+/* Fundo escurecido por trás da janela modal */
+.modal-overlay {
+  display: none;          /* Escondido por padrão */
+  position: fixed;                   /* Fica fixo na tela */
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;       /* Cobre o ecrã todo */
+  background: rgba(0, 0, 0, 0.6);    /* Fundo escuro translúcido */
+  justify-content: center;          /* Centraliza horizontalmente */
+  align-items: center;              /* Centraliza verticalmente */
+  z-index: 1000;                    /* Fica por cima de tudo */
+}
+
+/* Caixa do modal (formulário) */
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;                        /* Responsivo */
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+/* Título do modal */
+.modal-box h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #002e5d;
+  text-align: center;
+}
+
+/* Campos de input do formulário */
+.modal-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #003366;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Botões dentro do modal */
+.modal-box .botao {
+  width: 100%;                      /* Ocupa toda a largura do modal */
+  margin-top: 10px;
+}
+
+/* Botão de fechar */
+.modal-box .fechar {
+  background-color: #b71c1c;        /* Vermelho */
 }

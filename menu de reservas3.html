@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu de reservas</title>
+  <link rel="stylesheet" type="text/css" href="css_Menupag.css">
+</head>
+<body>
+  <h1>Menu de reservas</h1>
+
+  <form action="registar_reserva.php" method="post">
+    <label for="username">Nome de utilizador:</label><br>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="data_reserva">Data da reserva:</label><br>
+    <input type="date" id="data_reserva" name="data_reserva" required><br><br>
+
+    <label for="tipo">Tipo de reserva:</label><br>
+    <select name="tipo" id="tipo" required>
+      <option value="">-- Seleciona --</option>
+      <option value="Hotel">Hotel</option>
+      <option value="Carro">Carro</option>
+      <option value="Relaxamento">Relaxamento</option>
+      <option value="Aventura">Aventura</option>
+      <option value="Gastronomia">Gastronomia</option>
+    </select><br><br>
+
+    <label for="subtipo">Subtipo (escreve ou escolhe):</label><br>
+    <input type="text" name="subtipo" id="subtipo" required><br><br>
+
+    <label for="data_inicio">Data de início:</label><br>
+    <input type="date" name="data_inicio" required><br><br>
+
+    <label for="data_fim">Data de fim:</label><br>
+    <input type="date" name="data_fim" required><br><br>
+
+    <label for="pagamento">Pagamento efetuado?</label><br>
+    <input type="checkbox" name="pagamento" value="1"> Sim<br><br>
+
+    <input type="submit" value="Confirmar Reserva">
+  </form>
+
+  <a href="localhost\Users\Utilizador\Deskto\gestao de reservas.php" class="botao">Gerir Reservas</a>
+</body>
+</html>

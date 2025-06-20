@@ -1,0 +1,14 @@
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.campo label {
+    width: 120px;
+    margin-right: 10px;
+    text-align: left;
+}
+.campo input {
+    flex: 1;
+}
+

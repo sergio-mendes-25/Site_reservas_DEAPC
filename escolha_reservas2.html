@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Escolha de Reservas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #6699ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow-y: auto;
+    }
+    .container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .topicos {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .topico {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .opcoes {
+      display: none;
+      margin-top: 0.75rem;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .acoes {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      background: #007BFF;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+  <script>
+    function toggleOpcoes(id) {
+      let el = document.getElementById(id);
+      el.style.display = el.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</head>
+<body>
+  <form class="container" method="post" action="gestao_reservas2.php">
+    <h1 style="margin-bottom: 2rem; color: #000000;">A SUA RESERVA</h1>
+    <div class="topicos">
+      <div class="topico">
+        <button type="button" onclick="toggleOpcoes('hotel')">HOTEL</button>
+        <div class="opcoes" id="hotel">
+          <label>Check-in: <input type="date" name="checkin"></label>
+          <label>Check-out: <input type="date" name="checkout"></label>
+        </div>
+      </div>
+      <div class="topico">
+        <button type="button" onclick="toggleOpcoes('carros')">CARROS</button>
+        <div class="opcoes" id="carros">
+          <label><input type="radio" name="carro" value="Ferrari"> Ferrari</label>
+          <label><input type="radio" name="carro" value="McLaren"> McLaren</label>
+          <label><input type="radio" name="carro" value="Bugatti"> Bugatti</label>
+        </div>
+      </div>
+      <div class="topico">
+        <button type="button" onclick="toggleOpcoes('aventura')">AVENTURA</button>
+        <div class="opcoes" id="aventura">
+          <label><input type="radio" name="aventura" value="Slide"> SLIDE</label>
+          <label><input type="radio" name="aventura" value="Queda Livre"> QUEDA LIVRE</label>
+          <label><input type="radio" name="aventura" value="Paintball"> PAINTBALL</label>
+        </div>
+      </div>
+      <div class="topico">
+        <button type="button" onclick="toggleOpcoes('relaxamento')">RELAXAMENTO</button>
+        <div class="opcoes" id="relaxamento">
+          <label><input type="radio" name="relaxamento" value="SPA"> SPA</label>
+          <label><input type="radio" name="relaxamento" value="Piscina"> PISCINA</label>
+          <label><input type="radio" name="relaxamento" value="Sauna"> SAUNA</label>
+        </div>
+      </div>
+      <div class="topico">
+        <button type="button" onclick="toggleOpcoes('gastronomia')">GASTRONOMIA</button>
+        <div class="opcoes" id="gastronomia">
+          <label><input type="radio" name="gastronomia" value="MUU Steakhouse"> MUU Steakhouse</label>
+          <label><input type="radio" name="gastronomia" value="Barrica by YoursPorto"> Barrica by YoursPorto</label>
+          <label><input type="radio" name="gastronomia" value="Taberna dos Fernandes"> Taberna dos Fernandes</label>
+        </div>
+      </div>
+    </div>
+    <div class="acoes">
+      <button type="submit" formaction="gestao_reservas2.php">CONFIRMAR</button>
+      <button type="submit" formaction="pagamento.php">PAGAMENTO</button>
+    </div>
+  </form>
+</script>
+</body>
+</html>

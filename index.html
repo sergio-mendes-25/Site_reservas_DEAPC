@@ -1,26 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hotel California - Início</title>
-  <link rel="stylesheet" href="styles/style_inicio.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Hotel California - Início</title>
+      <link rel="stylesheet" href="styles/style_inicio.css">
 </head>
+
+<!-- Corpo da página -->
 <body>
-  <header>
-    <h1>Hotel California</h1>
-    <nav cass="menu-vertical">
-      <p><a href="registo.html">Registo</a>
-      <p><a href="login.html">Login</a>
-    </nav>
-  </header>
-  <main>
-    <a><p>Bem-vindo ao sistema de reservas do Hotel California.</p>
-    <img srcset="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
-  </main>
-  <footer>
-    <a><p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
-    <a></a><p>Telefone: +1 760-320-6810</p>
+    <!-- Cabeçalho da página -->
+    <header>
+        <h1>Hotel California</h1>     
+    </header>
+            <!-- Conteúdo principal -->
+            <main>
+                <!--Mensagem de boas-vindas-->
+                <p>Bem-vindo ao sistema de reservas do Hotel California.</p>
+                <!-- Mensagem de login -->
+                <p>Por favor, faça login ou registe-se para continuar.</p>
+                    <div class="botoes">
+                         <!-- Botão que abre o modal de login -->
+                         <button class="botao" type="button" onclick="abrirModal()">Login</button>            
+                         <!-- Link para a página de registo -->
+                         <a class="botao" href="registo.html">Registo</a>
+                     </div>
+                     <br>
+                <img src="images/hotel-california.jpg" alt="Hotel California" class="imagem-hotel">
+               
+                           <!-- Modal (janela pop-up de login) -->
+                           <div id="overlay" class="modal-overlay">
+                                 <div class="modal-box">
+                                       <h2>Login</h2>
+
+                                           <!-- Formulário de login -->
+                                           <form action="scripts/login.php" method="post">
+
+                                                <!-- Campo de email -->
+                                                <label for="email">Email:</label>
+                                                <input type="email" name="email" id="email" required>
+
+                                                <!-- Campo de password -->
+                                                <label for="pass">Password:</label>
+                                                <input type="password" name="pass" id="pass" required>
+
+                                                <!-- Botão para submeter o formulário -->
+                                                <button class="botao" type="submit">Entrar</button>
+
+                                                <!-- Botão para fechar o modal -->
+                                                <button class="botao fechar" type="button" onclick="fecharModal()">Fechar</button>
+                                           </form>
+                                 </div>
+                           </div>
+
+                  <!-- JavaScript para abrir/fechar modal -->
+                  <script src="scripts/login_index.js" defer></script>
+
+            </main>
+            
+  <footer> <!-- Rodapé da página -->
+    <p>Morada: 424 E Palm Canyon Dr, Palm Springs, Greater Palm Springs, CA 92264-8806</p>
+    <p>Telefone: +1 760-320-6810</p>
     <p>&copy; 2025 - Hotel California</p>
   </footer>
 </body>
