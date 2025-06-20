@@ -20,8 +20,10 @@ $user = $result->fetchArray(SQLITE3_ASSOC);
 // Verificar se utilizador existe e se password está correta
 if ($user && password_verify($password, $user['Password'])) {
     // Guardar dados na sessão
+    $_SESSION['id_utilizador'] = $user['ID'];        // <- necessário para gestao_reservas.php
     $_SESSION['email'] = $user['Email'];
     $_SESSION['nome'] = $user['Nome'];
+    $_SESSION['utilizador'] = $user['Nome'];         // <- também usado na tabela
 
     // Redirecionar para a área reservada do cliente
     header('Location: /~sergio/Site_reservas_DEAPC/escolha_reservas2.html');
