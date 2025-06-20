@@ -9,7 +9,7 @@
 <div class="form-container">
     <h1>Página de pagamento</h1>
     <form action="./scripts/action.php" method="post">
-        <input type="hidden" name="reserva_id" value="<?php echo $_GET['reserva_id'] ?? ''; ?>">
+        <input type="hidden" name="reserva_id" value="<?php echo $_GET['reserva_id']; ?>">
         <table class="form-table">
             <tbody>
                 <tr class="radio-row">
@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="submit" value="Submeter">
+                        <input type="submit" formaction="gestao_reservas2.php" value="Submeter">
                     </td>
                 </tr>
             </tbody>
