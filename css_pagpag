@@ -1,4 +1,14 @@
-body { background-color: gray; }
-h1 { font-size:36pt; }
-h2 { color:blue; }
-p { color:red; text-align:center; }
+.campo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.campo label {
+    width: 120px;
+    margin-right: 10px;
+    text-align: left;
+}
+.campo input {
+    flex: 1;
+}
+

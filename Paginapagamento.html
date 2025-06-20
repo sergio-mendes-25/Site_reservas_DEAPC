@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Página de pagamento</title>
+    <link rel="stylesheet" href="css_pagpag.css">
+</head>
+<body>
+<div class="form-container">
+    <h1>Página de pagamento</h1>
+    <form action="./scripts/action.php" method="post">
+        <input type="hidden" name="reserva_id" value="<?php echo $_GET['reserva_id'] ?? ''; ?>">
+        <table class="form-table">
+            <tbody>
+                <tr class="radio-row">
+                    <td colspan="2">
+                        <input type="radio" id="pagarcc" name="tpagamento" value="cartao" required onclick="toggleCamposCartao(true)">
+                        <label for="pagarcc">Pagar com cartão</label>
+                    </td>
+                </tr>
+                <!-- Campos do cartão -->
+                <tr class="campo-cartao" style="display:none;">
+                    <td><label for="numeroc">Número de Cartão:</label></td>
+                    <td><input type="text" id="numeroc" name="numeroc"></td>
+                </tr>
+                <tr class="campo-cartao" style="display:none;">
+                    <td><label for="cvv">CVV:</label></td>
+                    <td><input type="text" id="cvv" name="cvv"></td>
+                </tr>
+                <tr class="campo-cartao" style="display:none;">
+                    <td><label for="validade">Validade:</label></td>
+                    <td><input type="date" id="validade" name="validade"></td>
+                </tr>
+                <tr class="campo-cartao" style="display:none;">
+                    <td><label for="nome">Nome:</label></td>
+                    <td><input type="text" id="nome" name="nome"></td>
+                </tr>
+                <tr class="radio-row">
+                    <td colspan="2">
+                        <input type="radio" id="pagarhotel" name="tpagamento" value="hotel" onclick="toggleCamposCartao(false)">
+                        <label for="pagarhotel">Pagar no check-in</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Submeter">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <img src="./images/CC.jpeg" alt="Cartão de Crédito">
+</div>
+
+<script>
+function toggleCamposCartao(mostrar) {
+    const campos = document.querySelectorAll('.campo-cartao');
+    campos.forEach(tr => {
+        tr.style.display = mostrar ? '' : 'none';
+        // Torna os campos obrigatórios apenas se mostrar
+        const input = tr.querySelector('input');
+        if (input) input.required = mostrar;
+    });
+}
+</script>
+</body>
+</html>

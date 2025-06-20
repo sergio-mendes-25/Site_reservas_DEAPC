@@ -1,10 +1,47 @@
-body { background-color: LightGray; text-align:center; }
-h1 { font-size:36pt; text-align:center; }
-h1 { color:#003366; }
-p { color:darkblue; text-align:center; }
-input[type=text] {
-  width: 20%;
-  margin: 8px 0;
-  background-color: #f1f1f1;
+body {
+    background: #f2f2f2;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+.form-container {
+    background: #fff;
+    max-width: 420px;
+    margin: 50px auto 0 auto;
+    padding: 35px 40px 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.10);
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.form-table td {
+    padding: 0;
+    vertical-align: middle;
+}
+
+.form-table label {
+    display: block;
+    text-align: left;
+    color: #444;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="date"] {
+    width: 98%;
+    padding: 6px 8px;
+    border
 
